@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1> Ingreso de Datos del Cliente</h1>
-<form th:action="@{/agregar}" method="post" th:object="${cliente}">
+<form th:action="@{/agregar}" th:object="${cliente}" method="post">
     Nombre:
     <input type="text" th:field="*{nombre}"/><br/>
 
@@ -14,12 +14,12 @@
     <input type="number" th:field="*{saldoAnterior}"/><br/>
 
     Compras:
-        <input type="number" th:field="*{compras}"/><br/>
+    <input type="number" th:field="*{compras}"/><br/>
 
-        Pago Realizado:
-        <input type="number" th:field="*{pago}"/><br/>
+    Pago Realizado:
+    <input type="number" th:field="*{pago}"/><br/>
 
-        <button type="submit">Enviar</button>
+    <button type="submit">Enviar</button>
 </form>
 
 </body>

@@ -25,10 +25,10 @@ public class BancoControlador {
     }
 
     @PostMapping("/agregar")
-    public String agregar(@ModelAttribute BancoModelo cliente, Model model) {
-        bancoService.calcularDatos(cliente);
-        listaClientes.add(cliente);
-        model.addAttribute("cliente", listaClientes);
-        return "resultado";
+    public String agregar(@ModelAttribute BancoModelo bancoModelo, Model model) {
+        bancoService.calcularDatos(bancoModelo);
+        listaClientes.add(bancoModelo);
+        model.addAttribute("clientes", listaClientes);
+        return "resultados";
     }
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+</head>
+<body>
+<h1>Resultados de los Clientes</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Saldo Anterior</th>
+        <th>Compras</th>
+        <th>Pago</th>
+        <th>Saldo Actual</th>
+        <th>Pago Mínimo</th>
+        <th>Pago Sin Intereses</th>
+        <th>Interés Generado</th>
+        <th>¿Moroso?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cliente : ${cliente}">
+        <td th:text="${cliente.nombre}"></td>
+        <td th:text="${cliente.saldoAnterior}"></td>
+        <td th:text="${cliente.compras}"></td>
+        <td th:text="${cliente.pago}"></td>
+        <td th:text="${cliente.saldoActual}"></td>
+        <td th:text="${cliente.pagoMinimo}"></td>
+        <td th:text="${cliente.pagoNoIntereses}"></td>
+        <td th:text="${cliente.interesGenerado}"></td>
+        <td th:text="${cliente.moroso ? 'Sí' : 'No'}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/">Agregar cliente</a>
+</body>
+</html>
